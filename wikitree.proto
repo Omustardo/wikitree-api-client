@@ -1,0 +1,33 @@
+// TODO: Consider using proto3.
+syntax = "proto2";
+
+package wikitree;
+option go_package = "github.com/omustardo/wikitree-api-client/wikitree.proto;wikitree_proto";
+
+service WikiTree {
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+}
+
+message GetProfileRequest {
+  // Action to execute. This should be left as its default value.
+  optional string action = 1 [default = "getProfile"];
+  // WikiTree ID or PageId
+  optional string key = 2;
+  // Optional comma-separated list of fields to return
+  optional string fields = 3;
+  // Optional: "wiki", "html", or "both"
+  optional string bio_format = 4;
+  // If 1, then requested profiles that are redirections are followed to the final profile
+  optional string resolve_redirect = 5 [default = "1"];
+}
+
+message GetProfileResponse {
+  optional string page_name = 1;
+
+  message Profile {
+    optional string id = 1;
+    optional int64 page_id = 2;
+    optional string name = 3;
+  }
+  optional Profile profile = 2;
+}
