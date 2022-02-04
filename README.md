@@ -4,7 +4,7 @@ This project is a proof of concept for using Protobuf to simplify using [WikiTre
 
 The WikiTree API uses GET and POST requests with JSON blobs. To use these in a type-safe manner (in other words, using structs or classes rather than dealing with JSON) would require writing a lot of boilerplate code to handle parsing JSON. By having the JSON blobs represented as messages in a [Protocol Buffer](https://developers.google.com/protocol-buffers), it is theoretically easy to generate boilerplate code for most well supported languages using the protobuf compiler (`protoc`).
 
-A bit more context on why protocol buffers are nice, and the general thoughts behind creating this project: https://www.wikitree.com/g2g/1363173/is-there-proto-definition-for-the-api-would-worth-having-one
+A bit more context on why protocol buffers are nice, and the general thoughts behind creating this project: [WikiTree G2G Thread](https://web.archive.org/web/20220204004230/https://www.wikitree.com/g2g/1363173/is-there-proto-definition-for-the-api-would-worth-having-one)
 
 ## General Project Structure
 
